@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UAdeO Tienda Lince - Apartado confirmado</title>
+  <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body data-pagina="confirmacion">
+
+  <header id="navbar"></header>
+
+  <main>
+    <div class="contenedor contenedor--estrecho">
+
+      <!-- Cargando -->
+      <div id="confirmacion-cargando" class="pedidos__cargando">
+        Cargando confirmación...
+      </div>
+
+      <!-- Error -->
+      <div id="confirmacion-error" class="oculto alerta alerta--error">
+        No se pudo cargar el pedido. Verifica el enlace o tu sesión.
+      </div>
+
+      <!-- Confirmación exitosa -->
+      <div id="confirmacion-ok" class="oculto confirmacion">
+        <div class="confirmacion__icono">&#10003;</div>
+        <h1 class="confirmacion__titulo">¡Apartado confirmado!</h1>
+        <p class="confirmacion__subtitulo">
+          Guarda tu código y preséntalo en la caja UAdeO con tu credencial.
+        </p>
+
+        <div class="confirmacion__codigo-caja">
+          <span class="confirmacion__codigo-label">Código de apartado</span>
+          <span id="confirmacion-codigo" class="confirmacion__codigo">---</span>
+        </div>
+
+        <div class="confirmacion__info">
+          <div class="confirmacion__fila">
+            <span>Total a pagar:</span>
+            <strong id="confirmacion-total">$0.00</strong>
+          </div>
+          <div class="confirmacion__fila">
+            <span>Estado:</span>
+            <span id="confirmacion-estado" class="pedido-estado pedido-estado--pendiente">Pendiente de pago</span>
+          </div>
+          <div class="confirmacion__fila">
+            <span>Fecha:</span>
+            <span id="confirmacion-fecha">---</span>
+          </div>
+        </div>
+
+        <h2 class="confirmacion__detalle-titulo">Productos apartados</h2>
+        <div id="confirmacion-detalles" class="confirmacion__detalles">
+          <!-- JS pinta la tabla aquí -->
+        </div>
+
+        <div class="confirmacion__acciones">
+          <a href="/mis-pedidos/" class="btn btn--primario">Ver mis pedidos</a>
+          <a href="/catalogo/" class="btn btn--fantasma">Seguir comprando</a>
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script src="/static/js/navbar.js"></script>
+  <script src="/static/js/footer.js"></script>
+  <script src="/static/js/api.js"></script>
+  <script src="/static/js/auth.js"></script>
+  <script src="/static/js/tarjetas.js"></script>
+  <script src="/static/js/confirmacion.js"></script>
+  <script src="/static/js/main.js"></script>
+</body>
+</html>

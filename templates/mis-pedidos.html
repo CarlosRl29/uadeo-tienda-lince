@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UAdeO Tienda Lince - Mis pedidos</title>
+  <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body data-pagina="pedidos">
+
+  <header id="navbar"></header>
+
+  <main>
+    <div class="contenedor">
+
+      <h1 class="seccion-titulo mb-2">Mis pedidos</h1>
+      <p class="mb-3" style="color: var(--color-gris-texto);">
+        Aquí puedes ver tus apartados y su estado de pago.
+      </p>
+
+      <!-- Sin sesión -->
+      <div id="pedidos-sin-sesion" class="oculto alerta alerta--info">
+        Debes <a href="/login/">iniciar sesión</a> para ver tu historial de pedidos.
+      </div>
+
+      <!-- Cargando -->
+      <div id="pedidos-cargando" class="pedidos__cargando">
+        Cargando pedidos...
+      </div>
+
+      <!-- Sin pedidos -->
+      <div id="pedidos-vacio" class="oculto pedidos__vacio">
+        <h2 class="mb-2">Aún no tienes pedidos</h2>
+        <p class="mb-3" style="color: var(--color-gris-texto);">
+          Cuando confirmes un apartado desde el carrito, aparecerá aquí.
+        </p>
+        <a href="/catalogo/" class="btn btn--primario">Ir al catálogo</a>
+      </div>
+
+      <!-- Lista de pedidos -->
+      <div id="pedidos-lista" class="oculto pedidos__lista">
+        <!-- JS pinta las tarjetas aquí -->
+      </div>
+
+    </div>
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script src="/static/js/navbar.js"></script>
+  <script src="/static/js/footer.js"></script>
+  <script src="/static/js/api.js"></script>
+  <script src="/static/js/auth.js"></script>
+  <script src="/static/js/tarjetas.js"></script>
+  <script src="/static/js/mis-pedidos.js"></script>
+  <script src="/static/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UAdeO Tienda Lince - Iniciar sesión</title>
+  <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body data-pagina="login">
+
+  <header id="navbar"></header>
+
+  <main>
+    <div class="contenedor">
+      <form id="form-login" class="form" novalidate>
+        <h2 class="form__titulo">Iniciar sesión</h2>
+
+        <div id="login-mensaje" class="alerta oculto"></div>
+
+        <div class="form__campo">
+          <label class="form__etiqueta" for="login-matricula">Matrícula</label>
+          <input type="text" id="login-matricula" class="form__input"
+                 placeholder="Tu matrícula" required>
+        </div>
+
+        <div class="form__campo">
+          <label class="form__etiqueta" for="login-password">Contraseña</label>
+          <input type="password" id="login-password" class="form__input"
+                 placeholder="Tu contraseña" required>
+        </div>
+
+        <button type="submit" id="btn-iniciar" class="btn btn--primario btn--bloque">
+          Entrar
+        </button>
+
+        <p class="form__pie">
+          ¿Aún no tienes cuenta? <a href="/registro/">Regístrate</a>
+        </p>
+      </form>
+    </div>
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script src="/static/js/navbar.js"></script>
+  <script src="/static/js/footer.js"></script>
+  <script src="/static/js/api.js"></script>
+  <script src="/static/js/auth.js"></script>
+  <script src="/static/js/login.js"></script>
+  <script src="/static/js/main.js"></script>
+</body>
+</html>

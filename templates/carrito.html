@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UAdeO Tienda Lince - Carrito</title>
+  <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body data-pagina="carrito">
+
+  <header id="navbar"></header>
+
+  <main>
+    <div class="contenedor">
+
+      <h1 class="seccion-titulo mb-2">Tu carrito</h1>
+
+      <!-- Estado: carrito vacío -->
+      <div id="carrito-vacio" class="oculto carrito__vacio">
+        <h2 class="mb-2">Tu carrito está vacío</h2>
+        <p class="mb-3" style="color: var(--color-gris-texto);">
+          Explora el catálogo y aparta los productos que necesites para el semestre.
+        </p>
+        <a href="/catalogo/" class="btn btn--primario">Ir al catálogo</a>
+      </div>
+
+      <!-- Estado: carrito con productos -->
+      <div id="carrito-contenido" class="oculto">
+        <div class="carrito-layout">
+
+          <!-- Lista de productos del carrito -->
+          <section id="carrito-items" class="carrito__items">
+            <!-- JS pinta cada item aquí -->
+          </section>
+
+          <!-- Resumen del apartado -->
+          <aside class="carrito__resumen">
+            <h3 class="carrito__resumen-titulo">Resumen del apartado</h3>
+
+            <div class="carrito__total-fila">
+              <span>Productos:</span>
+              <span id="resumen-cantidad">0</span>
+            </div>
+            <div class="carrito__total-fila carrito__total-fila--principal">
+              <span>Total:</span>
+              <span id="resumen-total">$0.00</span>
+            </div>
+
+            <button type="button" id="btn-confirmar" class="btn btn--primario btn--bloque mt-2">
+              Confirmar apartado
+            </button>
+            <button type="button" id="btn-vaciar" class="btn btn--fantasma btn--bloque mt-1">
+              Vaciar carrito
+            </button>
+
+            <p class="carrito__nota">
+              Al confirmar generaremos un código de apartado. Llévalo a la caja UAdeO
+              con tu credencial para pagar en efectivo.
+            </p>
+          </aside>
+
+        </div>
+      </div>
+
+    </div>
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script src="/static/js/navbar.js"></script>
+  <script src="/static/js/footer.js"></script>
+  <script src="/static/js/api.js"></script>
+  <script src="/static/js/auth.js"></script>
+  <script src="/static/js/tarjetas.js"></script>
+  <script src="/static/js/carrito.js"></script>
+  <script src="/static/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,1386 @@
+/* ==========================================================================
+   UAdeO Tienda Lince - Hoja de estilos principal
+   Paleta inspirada en UAdeO: rojo vino, blanco, gris claro y negro suave.
+   ========================================================================== */
+
+/* --------------------------------------------------------------------------
+   1. Variables de color (cambia aquí y se actualiza todo el sitio)
+   -------------------------------------------------------------------------- */
+:root {
+  --color-vino: #7B1E2C;
+  --color-vino-oscuro: #5B121F;
+  --color-vino-claro: #A3344A;
+  --color-blanco: #FFFFFF;
+  --color-gris-claro: #F4F4F5;
+  --color-gris-medio: #D4D4D8;
+  --color-gris-texto: #6B6B70;
+  --color-negro: #2C2C2C;
+  --color-exito: #2E7D32;
+  --color-error: #C62828;
+
+  --sombra-suave: 0 2px 8px rgba(0, 0, 0, 0.06);
+  --sombra-media: 0 4px 16px rgba(0, 0, 0, 0.10);
+  --radio: 8px;
+  --max-ancho: 1200px;
+}
+
+/* --------------------------------------------------------------------------
+   2. Reset básico
+   -------------------------------------------------------------------------- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+  background-color: var(--color-gris-claro);
+  color: var(--color-negro);
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: var(--color-vino);
+  text-decoration: none;
+}
+
+a:hover {
+  color: var(--color-vino-oscuro);
+}
+
+/* --------------------------------------------------------------------------
+   3. Contenedor central
+   -------------------------------------------------------------------------- */
+.contenedor {
+  width: 100%;
+  max-width: var(--max-ancho);
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.contenedor--estrecho {
+  max-width: 640px;
+}
+
+main {
+  flex: 1;
+  padding: 2rem 0;
+}
+
+/* --------------------------------------------------------------------------
+   4. Navbar
+   -------------------------------------------------------------------------- */
+.navbar {
+  background-color: var(--color-blanco);
+  box-shadow: var(--sombra-suave);
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.navbar__contenedor {
+  max-width: var(--max-ancho);
+  margin: 0 auto;
+  padding: 0.75rem 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.navbar__marca {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 1.25rem;
+  font-weight: 700;
+  color: var(--color-vino);
+}
+
+.navbar__marca:hover {
+  color: var(--color-vino-oscuro);
+}
+
+.navbar__logo-icono {
+  width: 36px;
+  height: 36px;
+  background-color: var(--color-vino);
+  color: var(--color-blanco);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+}
+
+.navbar__menu {
+  display: flex;
+  gap: 1.25rem;
+  align-items: center;
+  list-style: none;
+}
+
+.navbar__link {
+  color: var(--color-negro);
+  font-weight: 500;
+  padding: 0.5rem 0.25rem;
+  border-bottom: 2px solid transparent;
+  transition: color 0.15s, border-color 0.15s;
+}
+
+.navbar__link:hover {
+  color: var(--color-vino);
+  border-bottom-color: var(--color-vino);
+}
+
+.navbar__link--activo {
+  color: var(--color-vino);
+  border-bottom-color: var(--color-vino);
+}
+
+.navbar__acciones {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+}
+
+.navbar__carrito {
+  position: relative;
+  padding: 0.4rem 0.6rem;
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--color-negro);
+  font-size: 1.1rem;
+}
+
+.navbar__carrito-badge {
+  position: absolute;
+  top: -4px;
+  right: -4px;
+  background-color: var(--color-vino);
+  color: var(--color-blanco);
+  font-size: 0.7rem;
+  font-weight: 700;
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* --------------------------------------------------------------------------
+   5. Botones
+   -------------------------------------------------------------------------- */
+.btn {
+  display: inline-block;
+  padding: 0.55rem 1.1rem;
+  border: none;
+  border-radius: var(--radio);
+  font-size: 0.95rem;
+  font-weight: 600;
+  cursor: pointer;
+  text-align: center;
+  transition: background-color 0.15s, transform 0.05s;
+  font-family: inherit;
+}
+
+.btn:active {
+  transform: translateY(1px);
+}
+
+.btn--primario {
+  background-color: var(--color-vino);
+  color: var(--color-blanco);
+}
+
+.btn--primario:hover {
+  background-color: var(--color-vino-oscuro);
+  color: var(--color-blanco);
+}
+
+.btn--secundario {
+  background-color: var(--color-blanco);
+  color: var(--color-vino);
+  border: 1.5px solid var(--color-vino);
+}
+
+.btn--secundario:hover {
+  background-color: var(--color-vino);
+  color: var(--color-blanco);
+}
+
+.btn--fantasma {
+  background: none;
+  color: var(--color-negro);
+}
+
+.btn--fantasma:hover {
+  background-color: var(--color-gris-claro);
+}
+
+.btn--peligro {
+  background-color: var(--color-error);
+  color: var(--color-blanco);
+}
+
+.btn--bloque {
+  width: 100%;
+}
+
+.btn--pequeno {
+  padding: 0.4rem 0.85rem;
+  font-size: 0.85rem;
+}
+
+.btn:disabled {
+  background-color: var(--color-gris-medio);
+  color: var(--color-gris-texto);
+  cursor: not-allowed;
+}
+
+/* --------------------------------------------------------------------------
+   6. Hero / banner
+   -------------------------------------------------------------------------- */
+.hero {
+  background: linear-gradient(135deg, var(--color-vino) 0%, var(--color-vino-oscuro) 100%);
+  color: var(--color-blanco);
+  padding: 3.5rem 1.5rem;
+  border-radius: var(--radio);
+  text-align: center;
+  margin-bottom: 2rem;
+}
+
+.hero__titulo {
+  font-size: 2.2rem;
+  margin-bottom: 0.5rem;
+}
+
+.hero__subtitulo {
+  font-size: 1.1rem;
+  opacity: 0.9;
+  margin-bottom: 1.5rem;
+}
+
+.hero__acciones {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.hero .btn--secundario {
+  background-color: var(--color-blanco);
+  color: var(--color-vino);
+  border: none;
+}
+
+/* --------------------------------------------------------------------------
+   7. Títulos de sección
+   -------------------------------------------------------------------------- */
+.seccion-titulo {
+  font-size: 1.5rem;
+  color: var(--color-negro);
+  margin-bottom: 1rem;
+  border-left: 4px solid var(--color-vino);
+  padding-left: 0.75rem;
+}
+
+/* --------------------------------------------------------------------------
+   8. Grid de productos y tarjetas (lo vamos a usar en Fase 4)
+   -------------------------------------------------------------------------- */
+.grid-productos {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.25rem;
+}
+
+.tarjeta {
+  background-color: var(--color-blanco);
+  border-radius: var(--radio);
+  overflow: visible;
+  box-shadow: var(--sombra-suave);
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.tarjeta:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--sombra-media);
+}
+
+.tarjeta__enlace {
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  border-radius: var(--radio) var(--radio) 0 0;
+  overflow: hidden;
+}
+
+.tarjeta__pie {
+  padding: 0 1rem 1rem;
+  flex-shrink: 0;
+}
+
+.tarjeta__pie .btn {
+  width: 100%;
+}
+
+.tarjeta__imagen {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  background-color: var(--color-gris-claro);
+  border-radius: var(--radio) var(--radio) 0 0;
+}
+
+/* Cuando el producto no tiene imagen, mostramos un bloque con sus iniciales. */
+.tarjeta__imagen--vacia {
+  background: linear-gradient(135deg, var(--color-vino) 0%, var(--color-vino-claro) 100%);
+  color: var(--color-blanco);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+}
+
+.tarjeta__cuerpo {
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  flex: 1;
+}
+
+.tarjeta__categoria {
+  font-size: 0.75rem;
+  color: var(--color-gris-texto);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.tarjeta__nombre {
+  font-size: 1rem;
+  font-weight: 600;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+  line-height: 1.3;
+  min-height: 2.6em;
+}
+
+.tarjeta__precio {
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: var(--color-vino);
+  margin-top: auto;
+}
+
+/* --------------------------------------------------------------------------
+   9. Formularios (los vamos a usar en Fase 3)
+   -------------------------------------------------------------------------- */
+.form {
+  background-color: var(--color-blanco);
+  padding: 2rem;
+  border-radius: var(--radio);
+  box-shadow: var(--sombra-suave);
+  max-width: 420px;
+  margin: 0 auto;
+}
+
+.form__titulo {
+  font-size: 1.4rem;
+  color: var(--color-vino);
+  margin-bottom: 1.25rem;
+  text-align: center;
+}
+
+.form__campo {
+  margin-bottom: 1rem;
+}
+
+.form__etiqueta {
+  display: block;
+  font-size: 0.9rem;
+  font-weight: 600;
+  margin-bottom: 0.35rem;
+  color: var(--color-negro);
+}
+
+.form__input,
+.form__select,
+.form__textarea {
+  width: 100%;
+  padding: 0.55rem 0.75rem;
+  border: 1.5px solid var(--color-gris-medio);
+  border-radius: var(--radio);
+  font-size: 0.95rem;
+  font-family: inherit;
+  background-color: var(--color-blanco);
+  transition: border-color 0.15s;
+}
+
+.form__input:focus,
+.form__select:focus,
+.form__textarea:focus {
+  outline: none;
+  border-color: var(--color-vino);
+}
+
+.form__textarea {
+  resize: vertical;
+  min-height: 80px;
+}
+
+.form__error {
+  color: var(--color-error);
+  font-size: 0.85rem;
+  margin-top: 0.25rem;
+}
+
+.form__pie {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.9rem;
+}
+
+/* --------------------------------------------------------------------------
+   10. Alertas / mensajes
+   -------------------------------------------------------------------------- */
+.alerta {
+  padding: 0.75rem 1rem;
+  border-radius: var(--radio);
+  margin-bottom: 1rem;
+  font-size: 0.95rem;
+}
+
+.alerta--exito {
+  background-color: #E8F5E9;
+  color: var(--color-exito);
+  border-left: 4px solid var(--color-exito);
+}
+
+.alerta--error {
+  background-color: #FFEBEE;
+  color: var(--color-error);
+  border-left: 4px solid var(--color-error);
+}
+
+.alerta--info {
+  background-color: #E3F2FD;
+  color: #1565C0;
+  border-left: 4px solid #1565C0;
+}
+
+/* --------------------------------------------------------------------------
+   10.5 Anuncios (página de inicio)
+   -------------------------------------------------------------------------- */
+.anuncios {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1rem;
+}
+
+.anuncio {
+  background-color: var(--color-blanco);
+  padding: 1.25rem;
+  border-radius: var(--radio);
+  border-left: 4px solid var(--color-vino);
+  box-shadow: var(--sombra-suave);
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.anuncio:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--sombra-media);
+}
+
+.anuncio__fecha {
+  display: inline-block;
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--color-gris-texto);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.4rem;
+}
+
+.anuncio__titulo {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 0.4rem;
+  color: var(--color-vino);
+}
+
+.anuncio__cuerpo {
+  font-size: 0.92rem;
+  color: var(--color-negro);
+  line-height: 1.5;
+}
+
+/* --------------------------------------------------------------------------
+   10.6 Carrusel de productos destacados (página de inicio)
+   -------------------------------------------------------------------------- */
+.carrusel {
+  position: relative;
+}
+
+.carrusel__contenedor {
+  display: flex;
+  gap: 1rem;
+  overflow-x: auto;
+  scroll-behavior: smooth;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  padding: 0.5rem 0.25rem;
+}
+
+.carrusel__contenedor::-webkit-scrollbar {
+  height: 8px;
+}
+.carrusel__contenedor::-webkit-scrollbar-track {
+  background: var(--color-gris-claro);
+  border-radius: 4px;
+}
+.carrusel__contenedor::-webkit-scrollbar-thumb {
+  background-color: var(--color-gris-medio);
+  border-radius: 4px;
+}
+
+.carrusel__item {
+  flex: 0 0 240px;
+  scroll-snap-align: start;
+}
+
+.carrusel__btn {
+  position: absolute;
+  top: 45%;
+  transform: translateY(-50%);
+  background-color: var(--color-blanco);
+  border: 1.5px solid var(--color-gris-medio);
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: var(--sombra-media);
+  z-index: 5;
+  font-size: 1.4rem;
+  font-weight: 700;
+  color: var(--color-vino);
+  transition: background-color 0.15s, color 0.15s;
+  font-family: inherit;
+}
+
+.carrusel__btn:hover {
+  background-color: var(--color-vino);
+  color: var(--color-blanco);
+}
+
+.carrusel__btn--prev { left: -14px; }
+.carrusel__btn--next { right: -14px; }
+
+@media (max-width: 600px) {
+  .carrusel__btn { display: none; }
+}
+
+/* --------------------------------------------------------------------------
+   10.7 Enlaces rápidos (página de inicio)
+   -------------------------------------------------------------------------- */
+.enlaces-rapidos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 1rem;
+}
+
+.enlace-rapido {
+  display: block;
+  background-color: var(--color-blanco);
+  padding: 1.5rem 1rem;
+  border-radius: var(--radio);
+  box-shadow: var(--sombra-suave);
+  text-align: center;
+  color: var(--color-negro);
+  text-decoration: none;
+  transition: transform 0.15s, box-shadow 0.15s, color 0.15s;
+}
+
+.enlace-rapido:hover {
+  transform: translateY(-3px);
+  box-shadow: var(--sombra-media);
+  color: var(--color-vino);
+}
+
+.enlace-rapido__icono {
+  width: 56px;
+  height: 56px;
+  background-color: var(--color-vino);
+  color: var(--color-blanco);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.6rem;
+  font-weight: 700;
+  margin: 0 auto 0.75rem;
+}
+
+.enlace-rapido__titulo {
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 0.25rem;
+}
+
+.enlace-rapido__desc {
+  font-size: 0.85rem;
+  color: var(--color-gris-texto);
+}
+
+/* --------------------------------------------------------------------------
+   10.8 Catálogo: layout con sidebar y filtros verticales
+   -------------------------------------------------------------------------- */
+.catalogo-layout {
+  display: grid;
+  grid-template-columns: 260px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.catalogo__sidebar {
+  background-color: var(--color-blanco);
+  padding: 1.25rem;
+  border-radius: var(--radio);
+  box-shadow: var(--sombra-suave);
+  position: sticky;
+  top: 5rem; /* respeta la navbar pegajosa */
+}
+
+.catalogo__sidebar-titulo {
+  font-size: 0.78rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--color-gris-texto);
+  margin-bottom: 0.5rem;
+}
+
+.catalogo__filtros-vertical {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+}
+
+/* Filtros (compartido por catálogo y otros usos futuros) */
+.filtro-btn {
+  padding: 0.4rem 0.9rem;
+  background-color: var(--color-blanco);
+  color: var(--color-negro);
+  border: 1.5px solid var(--color-gris-medio);
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: background-color 0.15s, color 0.15s, border-color 0.15s;
+  font-family: inherit;
+}
+
+.filtro-btn:hover {
+  border-color: var(--color-vino);
+  color: var(--color-vino);
+}
+
+.filtro-btn--activo {
+  background-color: var(--color-vino);
+  color: var(--color-blanco);
+  border-color: var(--color-vino);
+}
+
+.filtro-btn--activo:hover {
+  color: var(--color-blanco);
+}
+
+/* Variante vertical: pegada a la izquierda, sin border-radius redondo. */
+.filtro-btn--vertical {
+  text-align: left;
+  width: 100%;
+  border-radius: var(--radio);
+  border: 1.5px solid transparent;
+  padding: 0.55rem 0.8rem;
+  background-color: transparent;
+}
+
+.filtro-btn--vertical:hover {
+  background-color: var(--color-gris-claro);
+}
+
+.filtro-btn--vertical.filtro-btn--activo {
+  background-color: var(--color-vino);
+  color: var(--color-blanco);
+  border-color: var(--color-vino);
+}
+
+@media (max-width: 768px) {
+  .catalogo-layout {
+    grid-template-columns: 1fr;
+  }
+  .catalogo__sidebar {
+    position: static;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   10.6 Página de detalle del producto
+   -------------------------------------------------------------------------- */
+.detalle__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  background-color: var(--color-blanco);
+  padding: 1.5rem;
+  border-radius: var(--radio);
+  box-shadow: var(--sombra-suave);
+}
+
+.detalle__imagen {
+  width: 100%;
+  height: 320px;
+  object-fit: cover;
+  border-radius: var(--radio);
+}
+
+.detalle__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.detalle__nombre {
+  font-size: 1.8rem;
+  color: var(--color-negro);
+}
+
+.detalle__precio {
+  font-size: 2rem;
+  font-weight: 700;
+  color: var(--color-vino);
+}
+
+.detalle__stock {
+  font-size: 0.95rem;
+  color: var(--color-gris-texto);
+}
+
+.detalle__descripcion {
+  line-height: 1.6;
+  margin: 0.5rem 0 1.5rem;
+}
+
+@media (max-width: 700px) {
+  .detalle__grid {
+    grid-template-columns: 1fr;
+  }
+  .detalle__imagen {
+    height: 240px;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   10.9 Carrito de compras
+   -------------------------------------------------------------------------- */
+.carrito__vacio {
+  background-color: var(--color-blanco);
+  padding: 3rem 1.5rem;
+  border-radius: var(--radio);
+  box-shadow: var(--sombra-suave);
+  text-align: center;
+}
+
+.carrito-layout {
+  display: grid;
+  grid-template-columns: 1fr 320px;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.carrito__items {
+  background-color: var(--color-blanco);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra-suave);
+  overflow: hidden;
+}
+
+.carrito-item {
+  display: grid;
+  grid-template-columns: 80px 1fr auto 100px 40px;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  border-bottom: 1px solid var(--color-gris-claro);
+}
+
+.carrito-item:last-child {
+  border-bottom: none;
+}
+
+.carrito-item__imagen {
+  width: 80px;
+  height: 80px;
+  object-fit: cover;
+  border-radius: var(--radio);
+}
+
+.carrito-item__info {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+  min-width: 0; /* permite que el nombre se trunque si es muy largo */
+}
+
+.carrito-item__nombre {
+  font-weight: 600;
+  color: var(--color-negro);
+  text-decoration: none;
+}
+
+.carrito-item__nombre:hover {
+  color: var(--color-vino);
+}
+
+.carrito-item__precio {
+  font-size: 0.85rem;
+  color: var(--color-gris-texto);
+}
+
+.carrito-item__cantidad {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.carrito-item__cant-btn {
+  width: 30px;
+  height: 30px;
+  border: 1.5px solid var(--color-gris-medio);
+  background-color: var(--color-blanco);
+  color: var(--color-vino);
+  border-radius: 50%;
+  cursor: pointer;
+  font-weight: 700;
+  font-size: 1rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-family: inherit;
+}
+
+.carrito-item__cant-btn:hover {
+  background-color: var(--color-vino);
+  color: var(--color-blanco);
+  border-color: var(--color-vino);
+}
+
+.carrito-item__cant-input {
+  width: 48px;
+  text-align: center;
+  border: 1.5px solid var(--color-gris-medio);
+  border-radius: var(--radio);
+  padding: 0.3rem 0.25rem;
+  font-family: inherit;
+  font-size: 0.95rem;
+  -moz-appearance: textfield;
+}
+
+.carrito-item__cant-input::-webkit-outer-spin-button,
+.carrito-item__cant-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+.carrito-item__subtotal {
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--color-vino);
+  text-align: right;
+}
+
+.carrito-item__quitar {
+  background: none;
+  border: none;
+  color: var(--color-error);
+  font-size: 1.6rem;
+  line-height: 1;
+  cursor: pointer;
+  padding: 0.25rem 0.5rem;
+  border-radius: 50%;
+  font-family: inherit;
+}
+
+.carrito-item__quitar:hover {
+  background-color: rgba(198, 40, 40, 0.1);
+}
+
+.carrito__resumen {
+  background-color: var(--color-blanco);
+  padding: 1.5rem;
+  border-radius: var(--radio);
+  box-shadow: var(--sombra-suave);
+  position: sticky;
+  top: 5rem;
+}
+
+.carrito__resumen-titulo {
+  font-size: 1.1rem;
+  margin-bottom: 1rem;
+  color: var(--color-negro);
+}
+
+.carrito__total-fila {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.5rem 0;
+  font-size: 0.95rem;
+}
+
+.carrito__total-fila--principal {
+  font-weight: 700;
+  font-size: 1.25rem;
+  border-top: 2px solid var(--color-gris-claro);
+  padding-top: 0.75rem;
+  margin-top: 0.25rem;
+  color: var(--color-vino);
+}
+
+.carrito__nota {
+  margin-top: 1rem;
+  padding: 0.75rem;
+  background-color: var(--color-gris-claro);
+  border-radius: var(--radio);
+  font-size: 0.85rem;
+  color: var(--color-gris-texto);
+  line-height: 1.4;
+}
+
+@media (max-width: 768px) {
+  .carrito-layout {
+    grid-template-columns: 1fr;
+  }
+  .carrito__resumen {
+    position: static;
+  }
+  .carrito-item {
+    grid-template-columns: 60px 1fr 40px;
+    grid-template-rows: auto auto;
+    column-gap: 0.75rem;
+    row-gap: 0.5rem;
+  }
+  .carrito-item__imagen {
+    width: 60px;
+    height: 60px;
+    grid-row: 1 / 3;
+  }
+  .carrito-item__quitar {
+    grid-row: 1;
+    grid-column: 3;
+    justify-self: end;
+    align-self: start;
+  }
+  .carrito-item__cantidad {
+    grid-row: 2;
+    grid-column: 2 / 3;
+  }
+  .carrito-item__subtotal {
+    grid-row: 2;
+    grid-column: 3;
+    text-align: right;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   10.10 Toast (mensaje flotante)
+   -------------------------------------------------------------------------- */
+.toast {
+  position: fixed;
+  bottom: 24px;
+  right: 24px;
+  background-color: var(--color-negro);
+  color: var(--color-blanco);
+  padding: 0.85rem 1.25rem;
+  border-radius: var(--radio);
+  box-shadow: var(--sombra-media);
+  font-size: 0.95rem;
+  z-index: 1000;
+  max-width: 320px;
+  opacity: 0;
+  transform: translateY(20px);
+  transition: opacity 0.25s ease, transform 0.25s ease;
+}
+
+.toast--visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.toast--exito {
+  background-color: var(--color-exito);
+}
+
+.toast--error {
+  background-color: var(--color-error);
+}
+
+@media (max-width: 500px) {
+  .toast {
+    left: 12px;
+    right: 12px;
+    max-width: none;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   10.11 Pedidos e historial
+   -------------------------------------------------------------------------- */
+.pedidos__cargando {
+  text-align: center;
+  padding: 2rem;
+  color: var(--color-gris-texto);
+}
+
+.pedidos__vacio {
+  background-color: var(--color-blanco);
+  padding: 3rem 1.5rem;
+  border-radius: var(--radio);
+  box-shadow: var(--sombra-suave);
+  text-align: center;
+}
+
+.pedidos__lista {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.pedido-card {
+  background-color: var(--color-blanco);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra-suave);
+  padding: 1.25rem 1.5rem;
+}
+
+.pedido-card__encabezado {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.pedido-card__codigo {
+  display: block;
+  font-weight: 700;
+  font-size: 1.05rem;
+  color: var(--color-vino);
+}
+
+.pedido-card__fecha {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--color-gris-texto);
+  margin-top: 0.15rem;
+}
+
+.pedido-card__productos {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.75rem;
+  font-size: 0.9rem;
+  color: var(--color-gris-texto);
+}
+
+.pedido-card__productos li {
+  padding: 0.2rem 0;
+}
+
+.pedido-card__total {
+  font-size: 1rem;
+  color: var(--color-negro);
+}
+
+.pedido-estado {
+  display: inline-block;
+  padding: 0.25rem 0.65rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 600;
+  white-space: nowrap;
+}
+
+.pedido-estado--pendiente {
+  background-color: #fff3e0;
+  color: #e65100;
+}
+
+.pedido-estado--pagado {
+  background-color: #e8f5e9;
+  color: #2e7d32;
+}
+
+.pedido-estado--cancelado {
+  background-color: #ffebee;
+  color: #c62828;
+}
+
+.pedido-estado--entregado {
+  background-color: #e3f2fd;
+  color: #1565c0;
+}
+
+/* --------------------------------------------------------------------------
+   10.12 Página de confirmación
+   -------------------------------------------------------------------------- */
+.confirmacion {
+  background-color: var(--color-blanco);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra-suave);
+  padding: 2rem 1.5rem;
+  text-align: center;
+}
+
+.confirmacion__icono {
+  width: 64px;
+  height: 64px;
+  margin: 0 auto 1rem;
+  background-color: var(--color-exito);
+  color: var(--color-blanco);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 2rem;
+  font-weight: 700;
+}
+
+.confirmacion__titulo {
+  font-size: 1.6rem;
+  color: var(--color-vino);
+  margin-bottom: 0.5rem;
+}
+
+.confirmacion__subtitulo {
+  color: var(--color-gris-texto);
+  margin-bottom: 1.5rem;
+}
+
+.confirmacion__codigo-caja {
+  background-color: var(--color-gris-claro);
+  border: 2px dashed var(--color-vino);
+  border-radius: var(--radio);
+  padding: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+.confirmacion__codigo-label {
+  display: block;
+  font-size: 0.85rem;
+  color: var(--color-gris-texto);
+  margin-bottom: 0.35rem;
+}
+
+.confirmacion__codigo {
+  display: block;
+  font-size: 1.75rem;
+  font-weight: 800;
+  letter-spacing: 0.05em;
+  color: var(--color-vino);
+}
+
+.confirmacion__info {
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+.confirmacion__fila {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5rem 0;
+  border-bottom: 1px solid var(--color-gris-claro);
+  font-size: 0.95rem;
+}
+
+.confirmacion__detalle-titulo {
+  font-size: 1rem;
+  text-align: left;
+  margin-bottom: 0.75rem;
+}
+
+.confirmacion__detalles {
+  text-align: left;
+  margin-bottom: 1.5rem;
+}
+
+.confirmacion__detalle-fila {
+  display: flex;
+  justify-content: space-between;
+  padding: 0.4rem 0;
+  font-size: 0.9rem;
+  color: var(--color-gris-texto);
+}
+
+.confirmacion__acciones {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 500px) {
+  .confirmacion__acciones .btn {
+    width: 100%;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   10.13 Página de error 404
+   -------------------------------------------------------------------------- */
+.pagina-error {
+  background-color: var(--color-blanco);
+  border-radius: var(--radio);
+  box-shadow: var(--sombra-suave);
+  padding: 3rem 1.5rem;
+  text-align: center;
+  margin-top: 2rem;
+}
+
+.pagina-error__codigo {
+  display: block;
+  font-size: 4rem;
+  font-weight: 800;
+  color: var(--color-vino-claro);
+  line-height: 1;
+  margin-bottom: 0.5rem;
+}
+
+.pagina-error__titulo {
+  font-size: 1.5rem;
+  margin-bottom: 0.75rem;
+}
+
+.pagina-error__texto {
+  color: var(--color-gris-texto);
+  margin-bottom: 1.5rem;
+}
+
+.pagina-error__acciones {
+  display: flex;
+  gap: 0.75rem;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+/* --------------------------------------------------------------------------
+   11. Footer
+   -------------------------------------------------------------------------- */
+.footer {
+  background-color: var(--color-negro);
+  color: var(--color-blanco);
+  padding: 2rem 1.5rem;
+  margin-top: 3rem;
+}
+
+.footer__contenedor {
+  max-width: var(--max-ancho);
+  margin: 0 auto;
+  text-align: center;
+}
+
+.footer__titulo {
+  font-size: 1.1rem;
+  color: var(--color-vino-claro);
+  margin-bottom: 0.5rem;
+}
+
+.footer__texto {
+  font-size: 0.9rem;
+  opacity: 0.85;
+}
+
+/* --------------------------------------------------------------------------
+   12. Responsivo (móvil)
+   -------------------------------------------------------------------------- */
+@media (max-width: 768px) {
+  .navbar__contenedor {
+    justify-content: center;
+  }
+
+  .navbar__menu {
+    order: 3;
+    width: 100%;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+  }
+
+  .hero__titulo {
+    font-size: 1.7rem;
+  }
+
+  .grid-productos {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 0.75rem;
+  }
+
+  .tarjeta__imagen {
+    height: 140px;
+  }
+}
+
+@media (max-width: 480px) {
+  .tarjeta__pie .btn {
+    font-size: 0.8rem;
+    padding: 0.45rem 0.5rem;
+  }
+}
+
+/* --------------------------------------------------------------------------
+   13. Utilidades
+   -------------------------------------------------------------------------- */
+.oculto {
+  display: none !important;
+}
+
+.texto-centro {
+  text-align: center;
+}
+
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+.mb-1 { margin-bottom: 0.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }

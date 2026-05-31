@@ -1,0 +1,23 @@
+# Entorno virtual
+venv/
+env/
+
+# Base de datos local
+db.sqlite3
+db.sqlite3-journal
+
+# Archivos subidos por usuarios desde el admin
+media/
+
+# Archivos generados por Python
+__pycache__/
+*.pyc
+*.pyo
+
+# Configuración del editor
+.vscode/
+.idea/
+
+# Sistema
+Thumbs.db
+.DS_Store

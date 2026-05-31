@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UAdeO Tienda Lince - Registro</title>
+  <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body data-pagina="registro">
+
+  <header id="navbar"></header>
+
+  <main>
+    <div class="contenedor">
+      <form id="form-registro" class="form" novalidate>
+        <h2 class="form__titulo">Crear cuenta</h2>
+
+        <!-- Caja para mostrar mensajes de error o éxito desde JS -->
+        <div id="registro-mensaje" class="alerta oculto"></div>
+
+        <!-- Selector del tipo de usuario.
+             Al cambiar, registro.js muestra u oculta el campo de carrera. -->
+        <div class="form__campo">
+          <label class="form__etiqueta" for="reg-tipo">Soy</label>
+          <select id="reg-tipo" class="form__select" required>
+            <option value="ALUMNO">Alumno</option>
+            <option value="PROFESOR">Profesor</option>
+          </select>
+        </div>
+
+        <div class="form__campo">
+          <label class="form__etiqueta" for="reg-nombre">Nombre(s)</label>
+          <input type="text" id="reg-nombre" class="form__input" required>
+        </div>
+
+        <div class="form__campo">
+          <label class="form__etiqueta" for="reg-apellido">Apellido(s)</label>
+          <input type="text" id="reg-apellido" class="form__input" required>
+        </div>
+
+        <div class="form__campo">
+          <label class="form__etiqueta" for="reg-matricula">
+            <span id="reg-etiqueta-matricula">Matrícula</span>
+          </label>
+          <input type="text" id="reg-matricula" class="form__input"
+                 placeholder="Ej. 20230501" required>
+        </div>
+
+        <div class="form__campo">
+          <label class="form__etiqueta" for="reg-correo">Correo electrónico</label>
+          <input type="email" id="reg-correo" class="form__input"
+                 placeholder="alumno@uadeo.mx" required>
+        </div>
+
+        <!-- Campo de carrera: visible solo para alumnos.
+             registro.js lo oculta cuando el tipo cambia a PROFESOR. -->
+        <div class="form__campo" id="campo-carrera">
+          <label class="form__etiqueta" for="reg-carrera">Carrera</label>
+          <select id="reg-carrera" class="form__select">
+            <option value="">Cargando carreras...</option>
+          </select>
+        </div>
+
+        <div class="form__campo">
+          <label class="form__etiqueta" for="reg-telefono">Teléfono (opcional)</label>
+          <!-- inputmode="numeric": en móvil aparece el teclado numérico.
+               pattern="[0-9]*": atributo de validación del navegador.
+               maxlength="10": teléfonos mexicanos típicos.
+               Además registro.js elimina cualquier caracter no numérico mientras se escribe. -->
+          <input type="text" id="reg-telefono" class="form__input"
+                 inputmode="numeric" pattern="[0-9]*" maxlength="10"
+                 placeholder="6671234567">
+        </div>
+
+        <div class="form__campo">
+          <label class="form__etiqueta" for="reg-password">Contraseña</label>
+          <input type="password" id="reg-password" class="form__input"
+                 placeholder="Mínimo 8 caracteres" required>
+        </div>
+
+        <div class="form__campo">
+          <label class="form__etiqueta" for="reg-password2">Confirmar contraseña</label>
+          <input type="password" id="reg-password2" class="form__input" required>
+        </div>
+
+        <button type="submit" id="btn-registrar" class="btn btn--primario btn--bloque">
+          Crear cuenta
+        </button>
+
+        <p class="form__pie">
+          ¿Ya tienes cuenta? <a href="/login/">Inicia sesión</a>
+        </p>
+      </form>
+    </div>
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script src="/static/js/navbar.js"></script>
+  <script src="/static/js/footer.js"></script>
+  <script src="/static/js/api.js"></script>
+  <script src="/static/js/auth.js"></script>
+  <script src="/static/js/registro.js"></script>
+  <script src="/static/js/main.js"></script>
+</body>
+</html>

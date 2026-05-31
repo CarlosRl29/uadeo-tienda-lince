@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UAdeO Tienda Lince - Catálogo</title>
+  <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body data-pagina="catalogo">
+
+  <header id="navbar"></header>
+
+  <main>
+    <div class="contenedor">
+
+      <h1 class="seccion-titulo mb-2" id="titulo-resultados">Catálogo de productos</h1>
+
+      <!-- Layout de dos columnas: sidebar izquierda + grid derecha -->
+      <div class="catalogo-layout">
+
+        <!-- ============ SIDEBAR: BUSCADOR + FILTROS ============ -->
+        <aside class="catalogo__sidebar">
+          <div class="mb-3">
+            <h3 class="catalogo__sidebar-titulo">Buscar</h3>
+            <input type="text" id="input-busqueda" class="form__input"
+                   placeholder="Ej. playera, termo...">
+          </div>
+
+          <div>
+            <h3 class="catalogo__sidebar-titulo">Categorías</h3>
+            <div id="filtros-categorias" class="catalogo__filtros-vertical">
+              <!-- Los botones se generan en productos.js -->
+            </div>
+          </div>
+        </aside>
+
+        <!-- ============ GRID DE PRODUCTOS ============ -->
+        <section>
+          <div id="lista-productos" class="grid-productos">
+            <p class="texto-centro" style="grid-column: 1 / -1; padding: 2rem; color: var(--color-gris-texto);">
+              Cargando productos...
+            </p>
+          </div>
+        </section>
+
+      </div>
+
+    </div>
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script src="/static/js/navbar.js"></script>
+  <script src="/static/js/footer.js"></script>
+  <script src="/static/js/api.js"></script>
+  <script src="/static/js/auth.js"></script>
+  <script src="/static/js/tarjetas.js"></script>
+  <script src="/static/js/carrito.js"></script>
+  <script src="/static/js/productos.js"></script>
+  <script src="/static/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UAdeO Tienda Lince - Producto</title>
+  <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body data-pagina="catalogo">
+
+  <header id="navbar"></header>
+
+  <main>
+    <div class="contenedor">
+
+      <p class="mb-2"><a href="/">← Volver al catálogo</a></p>
+
+      <!-- El detalle se rellena con JS leyendo el slug de la URL -->
+      <section id="detalle-producto" class="detalle">
+        <p class="texto-centro" style="padding: 2rem; color: var(--color-gris-texto);">
+          Cargando producto...
+        </p>
+      </section>
+
+    </div>
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script src="/static/js/navbar.js"></script>
+  <script src="/static/js/footer.js"></script>
+  <script src="/static/js/api.js"></script>
+  <script src="/static/js/auth.js"></script>
+  <script src="/static/js/tarjetas.js"></script>
+  <script src="/static/js/carrito.js"></script>
+  <script src="/static/js/producto-detalle.js"></script>
+  <script src="/static/js/main.js"></script>
+</body>
+</html>

@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UAdeO Tienda Lince - Inicio</title>
+  <link rel="stylesheet" href="/static/css/styles.css">
+</head>
+<body data-pagina="inicio">
+
+  <header id="navbar"></header>
+
+  <main>
+    <div class="contenedor">
+
+      <!-- ============= HERO ============= -->
+      <section class="hero">
+        <h1 class="hero__titulo">UAdeO Tienda Lince</h1>
+        <p class="hero__subtitulo">
+          Tu tienda oficial universitaria. Aparta en línea y paga en la escuela.
+        </p>
+        <div class="hero__acciones">
+          <a href="/catalogo/" class="btn btn--secundario">Ver catálogo completo</a>
+        </div>
+      </section>
+
+      <!-- ============= ANUNCIOS ============= -->
+      <h2 class="seccion-titulo">Anuncios</h2>
+      <div class="anuncios mb-3">
+        <article class="anuncio">
+          <span class="anuncio__fecha">Aviso oficial</span>
+          <h3 class="anuncio__titulo">Bienvenidos al nuevo ciclo</h3>
+          <p class="anuncio__cuerpo">
+            Encuentra los productos oficiales UAdeO para arrancar tu semestre:
+            playeras, sudaderas, cuadernos y más.
+          </p>
+        </article>
+
+        <article class="anuncio">
+          <span class="anuncio__fecha">Cómo apartar</span>
+          <h3 class="anuncio__titulo">Aparta en línea, paga en escuela</h3>
+          <p class="anuncio__cuerpo">
+            Agrega productos al carrito, confirma tu apartado y recibe un código.
+            Llévalo a caja para pagar y recoger.
+          </p>
+        </article>
+
+        <article class="anuncio">
+          <span class="anuncio__fecha">Horario de caja</span>
+          <h3 class="anuncio__titulo">Lunes a viernes 9:00 - 14:00</h3>
+          <p class="anuncio__cuerpo">
+            La caja UAdeO atiende en horario regular. Tus apartados se conservan
+            por 3 días hábiles.
+          </p>
+        </article>
+      </div>
+
+      <!-- ============= CARRUSEL DE DESTACADOS ============= -->
+      <h2 class="seccion-titulo">Los más vendidos</h2>
+      <div class="carrusel mb-3">
+        <button type="button" id="carrusel-prev" class="carrusel__btn carrusel__btn--prev"
+                aria-label="Anterior">&#8249;</button>
+        <div id="carrusel-destacados" class="carrusel__contenedor">
+          <!-- Las tarjetas las pinta home.js leyendo /api/productos/?destacados=true -->
+          <p class="texto-centro" style="padding: 1.5rem; color: var(--color-gris-texto);">
+            Cargando productos destacados...
+          </p>
+        </div>
+        <button type="button" id="carrusel-next" class="carrusel__btn carrusel__btn--next"
+                aria-label="Siguiente">&#8250;</button>
+      </div>
+
+      <!-- ============= ENLACES RAPIDOS ============= -->
+      <h2 class="seccion-titulo">Recursos</h2>
+      <div class="enlaces-rapidos">
+        <a href="/catalogo/" class="enlace-rapido">
+          <div class="enlace-rapido__icono">C</div>
+          <div class="enlace-rapido__titulo">Ver catálogo</div>
+          <div class="enlace-rapido__desc">Todos los productos disponibles.</div>
+        </a>
+
+        <a href="mailto:soporte-tienda@uadeo.mx" class="enlace-rapido">
+          <div class="enlace-rapido__icono">S</div>
+          <div class="enlace-rapido__titulo">Soporte</div>
+          <div class="enlace-rapido__desc">Escríbenos si tienes algún problema.</div>
+        </a>
+
+        <a href="https://uadeo.mx/" target="_blank" rel="noopener" class="enlace-rapido">
+          <div class="enlace-rapido__icono">U</div>
+          <div class="enlace-rapido__titulo">Sitio oficial UAdeO</div>
+          <div class="enlace-rapido__desc">Universidad Autónoma de Occidente.</div>
+        </a>
+      </div>
+
+    </div>
+  </main>
+
+  <footer id="footer"></footer>
+
+  <script src="/static/js/navbar.js"></script>
+  <script src="/static/js/footer.js"></script>
+  <script src="/static/js/api.js"></script>
+  <script src="/static/js/auth.js"></script>
+  <script src="/static/js/tarjetas.js"></script>
+  <script src="/static/js/carrito.js"></script>
+  <script src="/static/js/home.js"></script>
+  <script src="/static/js/main.js"></script>
+</body>
+</html>
