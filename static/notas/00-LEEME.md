@@ -18,5 +18,6 @@ de estudio para el equipo.
 | `06-carrito-localstorage.md` | Cómo funciona el carrito guardado en el navegador (sin tocar el backend). |
 | `07-pedidos-y-confirmacion.md` | Confirmar apartado, crear pedido en la BD y ver el historial. |
 | `08-checklist-entrega-y-pruebas.md` | Lista final para probar todo antes de entregar el proyecto. |
+| `09-serializers-drf.md` | Cómo funcionan los serializers de Django REST Framework en las APIs. |
 
 > Consejo: léelos en orden. Cada uno se apoya en el anterior.

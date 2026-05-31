@@ -9,6 +9,7 @@ Los alumnos pueden registrarse, explorar productos, armar un carrito, confirmar 
 | Capa | Tecnología |
 |---|---|
 | Backend | Django 5.1 + Python |
+| API JSON | Django REST Framework (serializers) |
 | Frontend | HTML, CSS, JavaScript (vanilla) |
 | Base de datos | SQLite |
 | Imágenes | Pillow (subida desde admin) |
