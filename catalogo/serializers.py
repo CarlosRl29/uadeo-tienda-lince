@@ -12,13 +12,15 @@ from .models import Categoria, Producto
 
 
 def url_imagen_producto(producto, request):
-    """URL de la imagen: admin (media/) o SVG estática de respaldo."""
+    """URL de la imagen: admin (media/) o PNG estática en static/img/productos/."""
     if producto.imagen:
         return request.build_absolute_uri(producto.imagen.url)
 
-    ruta_fisica = settings.BASE_DIR / 'static' / 'img' / 'productos' / f'{producto.slug}.svg'
-    if ruta_fisica.exists():
-        return request.build_absolute_uri(static(f'img/productos/{producto.slug}.svg'))
+    carpeta = settings.BASE_DIR / 'static' / 'img' / 'productos'
+    for extension in ('png', 'jpg', 'jpeg', 'webp', 'svg'):
+        nombre = f'{producto.slug}.{extension}'
+        if (carpeta / nombre).exists():
+            return request.build_absolute_uri(static(f'img/productos/{nombre}'))
     return ''
 
 
